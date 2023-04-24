@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+
+char name[35], search[35], templine[200];
+
+FILE *file;
+
+printf("File name? ");
+scanf("%s",name);
+
+printf("what are you searching for? ");
+scanf("%s",search);
+
+file=fopen(name,"r");
+
+while(!EOF)
+{
+    fgets(templine,3000,file);
+
+    if(strstr(templine,search))
+    printf("%s",templine);
+    }
+    
+fclose(file);
+}
